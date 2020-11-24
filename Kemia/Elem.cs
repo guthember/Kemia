@@ -9,6 +9,7 @@ namespace Kemia
   class Elem
   {
     static public int db = 0;
+    static public int okorDb = 0;
 
     private string sEv;
 
@@ -62,6 +63,7 @@ namespace Kemia
       else
       {
         Ev = 0;
+        okorDb++;
       }
       db++;
     }

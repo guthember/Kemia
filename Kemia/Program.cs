@@ -29,7 +29,7 @@ namespace Kemia
 
     static void Harmadik()
     {
-      Console.WriteLine($"3. feladat: Elemek száma: {elemek.Count}");
+      Console.WriteLine($"3. feladat: Elemek száma: {Elem.db}");
     }
 
     static void Negyedik()
@@ -40,16 +40,16 @@ namespace Kemia
       //             select e).ToList().Count; 
       #endregion
       
-      int darab = 0;
-      foreach (var elem in elemek)
-      {
-        if (elem.Ev == 0)
-        {
-          darab++;
-        }
-      }
+      //int darab = 0;
+      //foreach (var elem in elemek)
+      //{
+      //  if (elem.Ev == 0)
+      //  {
+      //    darab++;
+      //  }
+      //}
 
-      Console.WriteLine($"4. feladat: Felfedezések száma az ókorban: {darab}");
+      Console.WriteLine($"4. feladat: Felfedezések száma az ókorban: {Elem.okorDb}");
     }
    
     static void Main(string[] args)
@@ -57,7 +57,7 @@ namespace Kemia
       Beolvasas();
       Harmadik();
       Negyedik();
-      Console.WriteLine(Elem.db);
+
       Console.ReadLine();
     }
   }
