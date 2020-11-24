@@ -123,6 +123,52 @@ namespace Kemia
       Console.WriteLine($"7. feladat: {max} év volt a leghosszabb időszak két elem felfedezése között.");
     }
 
+    static void Nyolcadik()
+    {
+      Console.WriteLine("8. feladat: Statisztika");
+
+      #region linq-val
+      //var csoportok = from e in elemek
+      //                where e.Ev != 0
+      //                group e by e.Ev into temp
+      //                where temp.Count() > 3
+      //                select temp;
+
+      //foreach (var csoport in csoportok)
+      //{
+      //  Console.WriteLine($"\t{csoport.Key}: {csoport.Count()} db");
+      //} 
+      #endregion
+
+      Dictionary<int, int> evek = new Dictionary<int, int>();
+
+      foreach (var elem in elemek)
+      {
+        if (elem.Ev != 0)
+        {
+          if(!evek.ContainsKey(elem.Ev))
+          {
+            evek[elem.Ev] = 1;
+          }
+          else
+          {
+            evek[elem.Ev]++;
+          }
+        }
+      }
+
+      foreach (var ev in evek)
+      {
+        if (ev.Value > 3)
+        {
+          Console.WriteLine($"\t{ev.Key}: {ev.Value} db");
+        }
+      }
+
+
+    }
+
+
     static void Main(string[] args)
     {
       Beolvasas();
@@ -131,6 +177,7 @@ namespace Kemia
       Otodik();
       Hatodik();
       Hetedik();
+      Nyolcadik();
 
       Console.ReadLine();
     }
