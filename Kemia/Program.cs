@@ -89,12 +89,34 @@ namespace Kemia
       }
     }
 
+    static void Hatodik()
+    {
+      var talalat = (from e in elemek
+                     where e.Vegyjel.ToUpper() == vegyjel.ToUpper()
+                     select e).ToList();
+
+      Console.WriteLine("6. feladat: Keresés");
+      if (talalat.Count != 0)
+      {
+        Console.WriteLine($"\tAz elem vegyjele: {talalat[0].Vegyjel}");
+        Console.WriteLine($"\tAz elem neve: {talalat[0].Nev}");
+        Console.WriteLine($"\tRendszáma: {talalat[0].Rsz}");
+        Console.WriteLine($"\tFelfedezés éve: {talalat[0].SEV}");
+        Console.WriteLine($"\tFelfedező: {talalat[0].Felfedezo}");
+      }
+      else
+      {
+        Console.WriteLine("Nincs ilyen elem az adatforrásban!");
+      }
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
       Negyedik();
       Otodik();
+      Hatodik();
 
       Console.ReadLine();
     }
