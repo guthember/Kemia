@@ -27,9 +27,15 @@ namespace Kemia
       be.Close();
     }
 
+    static void Harmadik()
+    {
+      Console.WriteLine($"3. feladat: Elemek száma: {elemek.Count}");
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
+      Harmadik();
 
       Console.ReadLine();
     }
