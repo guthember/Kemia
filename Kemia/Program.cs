@@ -32,11 +32,32 @@ namespace Kemia
       Console.WriteLine($"3. feladat: Elemek száma: {elemek.Count}");
     }
 
+    static void Negyedik()
+    {
+      #region linq-val
+      //int darab = (from e in elemek
+      //             where e.Ev == 0
+      //             select e).ToList().Count; 
+      #endregion
+      
+      int darab = 0;
+      foreach (var elem in elemek)
+      {
+        if (elem.Ev == 0)
+        {
+          darab++;
+        }
+      }
+
+      Console.WriteLine($"4. feladat: Felfedezések száma az ókorban: {darab}");
+    }
+   
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
-
+      Negyedik();
+      Console.WriteLine(Elem.db);
       Console.ReadLine();
     }
   }

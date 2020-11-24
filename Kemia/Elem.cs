@@ -8,6 +8,8 @@ namespace Kemia
 {
   class Elem
   {
+    static public int db = 0;
+
     private string sEv;
 
     public string SEV
@@ -61,6 +63,7 @@ namespace Kemia
       {
         Ev = 0;
       }
+      db++;
     }
   }
 }
