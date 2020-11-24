@@ -10,6 +10,7 @@ namespace Kemia
   class Program
   {
     static List<Elem> elemek = new List<Elem>();
+    static string vegyjel;
 
     static void Beolvasas()
     {
@@ -51,12 +52,49 @@ namespace Kemia
 
       Console.WriteLine($"4. feladat: Felfedezések száma az ókorban: {Elem.okorDb}");
     }
-   
+
+    static bool Validal(string mit)
+    {
+      bool vissza = false;
+      mit = mit.ToUpper();
+
+      if (mit.Length == 0 || mit.Length > 2)
+      {
+        vissza = true;
+      }
+      else
+      {
+        foreach (char betu in mit)
+        {
+          int kod = (int)betu;
+          if (!(kod >= 65 && kod <= 90))
+          {
+            vissza = true;
+          }
+        }
+      }
+      return vissza;
+    }
+
+    static void Otodik()
+    {
+      bool nemjo = true;
+
+      while (nemjo)
+      {
+        Console.Write("5. feladat: Kérek egy vegyjelet: ");
+        vegyjel = Console.ReadLine();
+
+        nemjo = Validal(vegyjel);
+      }
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
       Negyedik();
+      Otodik();
 
       Console.ReadLine();
     }
