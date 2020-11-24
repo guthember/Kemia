@@ -110,6 +110,19 @@ namespace Kemia
       }
     }
 
+    static void Hetedik()
+    {
+      int max = 0;
+      for (int i = Elem.okorDb; i < Elem.db - 1; i++)
+      {
+        if (elemek[i+1].Ev - elemek[i].Ev > max)
+        {
+          max = elemek[i + 1].Ev - elemek[i].Ev;
+        }
+      }
+      Console.WriteLine($"7. feladat: {max} év volt a leghosszabb időszak két elem felfedezése között.");
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
@@ -117,6 +130,7 @@ namespace Kemia
       Negyedik();
       Otodik();
       Hatodik();
+      Hetedik();
 
       Console.ReadLine();
     }
